@@ -1,9 +1,9 @@
-package com.example.cutomannotationspringboot.bean;
+package com.example.cutomannotationspringboot.dto.user;
 
 import lombok.Data;
 
 @Data
-public class LoginUser {
+public class LoginUserDto {
     private String username;
     private String password;
 }

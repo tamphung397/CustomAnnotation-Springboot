@@ -9,6 +9,7 @@ import lombok.*;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class Staff {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,6 +17,8 @@ public class Staff {
     private String name;
     private String position;
     private int salary;
+
+    private int status;
 
     public Staff(String name, String position, int salary) {
         this.name = name;

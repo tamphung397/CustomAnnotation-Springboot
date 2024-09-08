@@ -1,6 +1,6 @@
 package com.example.cutomannotationspringboot.springsecurity.jwt;
 
-import com.example.cutomannotationspringboot.bean.LoginResponse;
+import com.example.cutomannotationspringboot.dto.user.LoginResponseDto;
 import com.example.cutomannotationspringboot.properties.JwtProperties;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
@@ -53,10 +53,10 @@ public class JwtUtils {
     }
 
 
-    public LoginResponse generateToken(String username) {
+    public LoginResponseDto generateToken(String username) {
         Map<String, Object> claims = new HashMap<>();
         String token = createToken(claims, username);
-        return new LoginResponse(token, jwtProperties.getExpiration());
+        return new LoginResponseDto(token, jwtProperties.getExpiration());
     }
 
 

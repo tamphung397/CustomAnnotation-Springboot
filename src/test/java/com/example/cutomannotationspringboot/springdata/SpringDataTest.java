@@ -1,5 +1,7 @@
 package com.example.cutomannotationspringboot.springdata;
 
+import com.example.cutomannotationspringboot.dto.staff.CreateStaffDto;
+import com.example.cutomannotationspringboot.service.StaffService;
 import com.example.cutomannotationspringboot.springdata.entity.Staff;
 import com.example.cutomannotationspringboot.springdata.entity.User;
 import com.example.cutomannotationspringboot.springdata.repository.StaffRepository;
@@ -14,13 +16,11 @@ import org.springframework.test.context.junit4.SpringRunner;
 @RunWith(SpringRunner.class)
 public class SpringDataTest {
     @Autowired
-    private StaffRepository staffRepository;
+    private StaffService staffService;
 
     @Test
     public void createStaff(){
-        User user = new User("test@gmail.com","test4",new BCryptPasswordEncoder().encode("1234"));
-        Staff staff = new Staff("staff1","Dev",4000);
-        staff.setUser(user);
-        staffRepository.save(staff);
+        CreateStaffDto createStaffDto = new CreateStaffDto("staff1","Dev",4000,"test2","1234","test@gmail.com");
+        staffService.createStaff(createStaffDto);
     }
 }

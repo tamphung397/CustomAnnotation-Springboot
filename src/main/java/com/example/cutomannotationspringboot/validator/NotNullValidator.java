@@ -1,6 +1,6 @@
 package com.example.cutomannotationspringboot.validator;
 
-import com.example.cutomannotationspringboot.annotation.TamNotNull;
+import com.example.cutomannotationspringboot.validator.annotation.TamNotNull;
 import com.example.cutomannotationspringboot.exception.NotNullException;
 import org.springframework.stereotype.Component;
 

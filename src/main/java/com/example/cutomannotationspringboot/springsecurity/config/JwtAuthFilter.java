@@ -1,6 +1,6 @@
 package com.example.cutomannotationspringboot.springsecurity.config;
 
-import com.example.cutomannotationspringboot.service.UserDetailsServiceImpl;
+import com.example.cutomannotationspringboot.service.impl.UserDetailsServiceImpl;
 import com.example.cutomannotationspringboot.springsecurity.jwt.JwtUtils;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

@@ -1,4 +1,4 @@
-package com.example.cutomannotationspringboot.annotation;
+package com.example.cutomannotationspringboot.validator.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

@@ -1,6 +1,6 @@
 package com.example.cutomannotationspringboot.validator;
 
-import com.example.cutomannotationspringboot.annotation.TamLength;
+import com.example.cutomannotationspringboot.validator.annotation.TamLength;
 import com.example.cutomannotationspringboot.exception.NotInLengthException;
 import org.springframework.stereotype.Component;
 

@@ -1,13 +1,11 @@
-package com.example.cutomannotationspringboot.annotation;
+package com.example.cutomannotationspringboot.validator.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-@Target({ElementType.FIELD})
+@Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface TamLength {
-    int min();
-    int max();
+public @interface TamValidateRequest {
 }

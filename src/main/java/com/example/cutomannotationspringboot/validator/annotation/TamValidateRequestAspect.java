@@ -1,9 +1,6 @@
-package com.example.cutomannotationspringboot.annotation;
+package com.example.cutomannotationspringboot.validator.annotation;
 
-import com.example.cutomannotationspringboot.bean.Product;
-import com.example.cutomannotationspringboot.exception.NotInLengthException;
-import com.example.cutomannotationspringboot.exception.NotInRangeException;
-import com.example.cutomannotationspringboot.exception.NotNullException;
+import com.example.cutomannotationspringboot.dto.product.ProductDto;
 import com.example.cutomannotationspringboot.validator.RequestValidator;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
@@ -18,9 +15,9 @@ public class TamValidateRequestAspect {
     @Autowired
     private RequestValidator validator;
 
-    @Before("@annotation(TamValidateRequest)")
+    @Before("@annotation(com.example.cutomannotationspringboot.validator.annotation.TamValidateRequest)")
     public void validateRequest(JoinPoint joinPoint) throws Exception {
-        Product product = (Product) joinPoint.getArgs()[0];
-        validator.validate(product);
+        Object object = joinPoint.getArgs()[0];
+        validator.validate(object);
     }
 }

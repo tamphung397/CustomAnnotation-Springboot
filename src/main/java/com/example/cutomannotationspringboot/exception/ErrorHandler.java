@@ -21,4 +21,9 @@ public class ErrorHandler {
     public ResponseEntity<String> notNullException(NotNullException ex){
         return new ResponseEntity<>(ex.getMessage(), HttpStatus.BAD_REQUEST);
     }
+
+    @ExceptionHandler(SpringDemoException.class)
+    public ResponseEntity<String> springDemoException(SpringDemoException ex){
+        return new ResponseEntity<>(ex.getMessage(), HttpStatus.BAD_REQUEST);
+    }
 }

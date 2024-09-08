@@ -1,7 +1,6 @@
-package com.example.cutomannotationspringboot.service;
+package com.example.cutomannotationspringboot.service.impl;
 
-import com.example.cutomannotationspringboot.bean.CustomUserDetails;
-import com.example.cutomannotationspringboot.springdata.entity.User;
+import com.example.cutomannotationspringboot.dto.user.CustomUserDetails;
 import com.example.cutomannotationspringboot.springdata.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -16,11 +15,8 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-
-        User user = userRepository.findByUsername(username);
-        if(user == null){
-            throw new UsernameNotFoundException("could not found user..!!");
-        }
-        return new CustomUserDetails(user);
+        return userRepository.findByUsername(username)
+                .map(CustomUserDetails::new)
+                .orElseThrow(() -> new UsernameNotFoundException("Could not find user"));
     }
 }

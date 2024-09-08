@@ -14,3 +14,12 @@ CREATE TABLE staff
     salary   int,
     user_id  serial REFERENCES users (id)
 )
+
+CREATE TABLE product
+(
+    id          serial primary key,
+    name        varchar(255),
+    description varchar(255),
+    price       int,
+    status      int
+)
